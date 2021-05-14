@@ -2,44 +2,28 @@
   <div class="login_container">
     <div class="login_box">
       <div class="header_box">
-        <img
-          src="../assets/logo.png"
-          alt=""
-        >
+        <img src="../assets/logo.png" alt="">
       </div>
       <el-form
         ref="loginFormRef"
         :model="loginForm"
         :rules="loginRules"
-        class="login_form"
-      >
+        class="login_form">
         <el-form-item prop="username">
           <el-input v-model="loginForm.username">
             <i slot="prefix" class="el-input__icon el-icon-user"/>
           </el-input>
         </el-form-item>
         <el-form-item prop="password">
-          <el-input
-            v-model="loginForm.password"
-            type="password"
-          >
-            <i
-              slot="prefix"
-              class="el-input__icon el-icon-lock"
-            />
+          <el-input v-model="loginForm.password" type="password">
+            <i slot="prefix" class="el-input__icon el-icon-lock"/>
           </el-input>
         </el-form-item>
         <el-form-item class="btns">
-          <el-button
-            type="primary"
-            @click="login"
-          >
+          <el-button type="primary" @click="login">
             登录
           </el-button>
-          <el-button
-            type="info"
-            @click="resetLoginForm"
-          >
+          <el-button type="info" @click="resetLoginForm">
             重置
           </el-button>
         </el-form-item>
