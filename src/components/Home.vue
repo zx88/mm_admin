@@ -137,16 +137,29 @@ export default {
             width: 50px;
         }
     }
-
+    .el-button{
+      margin-right: 15px;
+    }
 }
 .el-aside {
     background-color: #333744;
+    // display: block;
+    // position: absolute;
+    // left: 0;
+    // top: 60px;
+    // bottom: 0;
     .el-menu{
         border-right: none;
     }
 }
 .el-main {
     background-color: #E9EEF3;
+    // position: absolute;
+    // left: 200px;
+    // right: 0;
+    // top: 60px;
+    // bottom: 0;
+    // overflow-y: scroll;
 }
 .toggle_button{
     background-color: #4a5064;
