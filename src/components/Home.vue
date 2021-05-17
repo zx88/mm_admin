@@ -10,10 +10,10 @@
         <span>喵喵网管理后台</span>
       </div>
       <el-button
-        type="info"
+        type="danger"
         @click="logout"
       >
-        退出
+        退出登录
       </el-button>
     </el-header>
     <!-- 页面主体 -->

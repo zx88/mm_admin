@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './plugins/element.js'
+import TreeTable from 'vue-table-with-tree-grid'
 // 导入全局样式
 import './assets/css/common.css'
 
@@ -14,6 +15,9 @@ axios.interceptors.request.use(config => {
   config.headers.Authorization = window.sessionStorage.getItem('token')
   return config
 })
+
+//表格插件
+Vue.component('tree-table', TreeTable)
 
 Vue.config.productionTip = false
 
