@@ -4,6 +4,14 @@ import router from './router'
 import store from './store'
 import './plugins/element.js'
 import TreeTable from 'vue-table-with-tree-grid'
+
+// 富文本编辑器
+import VueQuillEditor from 'vue-quill-editor'
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+
 // 导入全局样式
 import './assets/css/common.css'
 
@@ -16,10 +24,26 @@ axios.interceptors.request.use(config => {
   return config
 })
 
-//表格插件
+// 注册富文本编辑器
+Vue.use(VueQuillEditor)
+
+//注册表格插件
 Vue.component('tree-table', TreeTable)
 
 Vue.config.productionTip = false
+
+// 时间戳转过滤器
+Vue.filter('dateFormat', (originVal) => {
+  const dt = new Date(originVal * 1000)
+  const y = dt.getFullYear()
+  const m = (dt.getMonth() + 1 + '').padStart(2, '0')
+  const d = (dt.getDate() + '').padStart(2, '0')
+  const hh = (dt.getHours() + '').padStart(2, '0')
+  const mm = (dt.getMinutes() + '').padStart(2, '0')
+  const ss = (dt.getSeconds() + '').padStart(2, '0')
+  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+})
+
 
 new Vue({
   router,
